@@ -1,0 +1,83 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 auto;
+    background: wheat;
+    color: wheat;
+    min-width: 230px;
+    max-width: 550px;
+    font-weight: 300;
+}
+
+.stopwatch {
+    position: relative;
+    border-radius: 20px;
+}
+
+.caption {
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: black;
+    text-rendering: optimizeLegibility;
+    margin: 40px auto;
+    background: #fbfbfa;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+.clock {
+    background: #fbfbfa;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: black;
+    text-rendering: optimizeLegibility;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+    margin: 0 auto 20px auto;
+}
+
+.main {
+    padding: 50px;
+    border: none;
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+    background: #fbfbfa;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+.case {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size: 24px;
+}
+
+.button {
+    border-width: 20px;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.b_style {
+    background-color: #d4d3c1;
+    border-color: transparent;
+    color: black;
+}
