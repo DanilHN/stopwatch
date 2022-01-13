@@ -4,6 +4,7 @@ import './App.css';
 import React, {
   useCallback,
   useEffect,
+  useRef,
   useState,
   useMemo,
 } from 'react';
@@ -17,6 +18,7 @@ import {
 } from 'rxjs/operators';
 
 import { Controls } from './components/Controls';
+
 
 const App = () => {
   const [state, setState] = useState('stop');
@@ -39,35 +41,22 @@ const App = () => {
   }, []);
 
   const wait = useCallback(() => {
-    //click$.next();
-   setState('wait');
-    //click$.next();
+  click$.next();
+  setState('wait');
+   click$.next();
   }, []);
 
-  function useClick(mouseClicks$, setState) {
-    useEffect(() => {
-      if (!mouseClicks$) return;
-      const subject$ = mouseClicks$
-        .pipe(
-          buffer(mouseClicks$.pipe(debounceTime(300))),
-          tap((e) => console.log(e)),
-          map((e) => e.length),
-          filter((e) => e === 2),
-        )
-        .subscribe((e) => setState(false));
-      return () => subject$.unsubscribe();
-    }, [mouseClicks$, setState]);
-    
-  }
+ 
+
   
 
   useEffect(() => {
-   /* const doubleClick$ = click$.pipe(
+    const doubleClick$ = click$.pipe(
       buffer(click$.pipe(debounceTime(300))),
       map((list) => list.length),
       filter((value) => value >= 2),
      
-    );*/
+    );
     const timer$ = new Observable((observer) => {
       let count = 0;
       const intervalId = setInterval(() => {
@@ -81,7 +70,7 @@ const App = () => {
     });
 
     const subscribtion$ = timer$
-      //.pipe(takeUntil(doubleClick$))
+      .pipe(takeUntil(doubleClick$))
       .pipe(takeUntil(stop$))
       .subscribe({
         next: () => {

@@ -29,7 +29,7 @@ export const Controls = ({
         <button type="button" className="button b_style" onClick={reset}>
           Reset
         </button>
-        <button type="button" className="button b_style" onClick={wait}>
+        <button type="button" className="button b_style" onDoubleClick={wait}>
           Wait
         </button>
       </div>
